@@ -1,0 +1,28 @@
+
+<%- include("partials/header.ejs") %>
+
+    <div class="container">
+      <div class="create-box">
+        <h2>// NEW_ENTRY</h2>
+        <form action="/submit" method="POST">
+          <input type="text" name="content" placeholder="Type your thought here..." autocomplete="off" required>
+          <button type="submit">PUBLISH</button>
+        </form>
+      </div>
+      <div class="notes-list">
+        <% if (posts.length > 0) { %> <% posts.forEach((post) => { %> <div class="note-card">
+          <p><%= post %></p> </div>
+
+      <% }) %> <% } else { %>
+      
+      <div class="empty-state">
+        <p>// NO_DATA_FOUND...</p>
+      </div>
+
+    <% } %>
+      </div>
+    </div>
+
+<%- include("partials/footer.ejs") %>
+
+
